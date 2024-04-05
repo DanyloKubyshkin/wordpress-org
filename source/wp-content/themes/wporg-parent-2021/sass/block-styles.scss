@@ -576,3 +576,25 @@
 .is-style-list-long-items > li {
 	margin-bottom: var(--wp--preset--spacing--20);
 }
+
+.wp-block-spacer {
+	&.is-style-dots-background,
+	&.is-style-dark-dots-background,
+	&.is-style-blue-dots-background {
+		background-position: top center;
+		background-repeat: repeat-x;
+		background-size: auto;
+	}
+
+	&.is-style-dots-background {
+		background-image: url(../images/dots-banner.svg);
+	}
+
+	&.is-style-blue-dots-background {
+		background-image: url(../images/dots-blue-banner.svg);
+	}
+
+	&.is-style-dark-dots-background {
+		background-image: url(../images/dots-dark-banner.svg);
+	}
+}

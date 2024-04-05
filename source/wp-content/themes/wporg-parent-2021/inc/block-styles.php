@@ -207,6 +207,33 @@ function setup_block_styles() {
 			'style_handle' => STYLE_HANDLE,
 		)
 	);
+
+	register_block_style(
+		'core/spacer',
+		array(
+			'name'         => 'dots-background',
+			'label'        => __( 'Dots', 'wporg' ),
+			'style_handle' => STYLE_HANDLE,
+		)
+	);
+
+	register_block_style(
+		'core/spacer',
+		array(
+			'name'         => 'blue-dots-background',
+			'label'        => __( 'Dots (blue)', 'wporg' ),
+			'style_handle' => STYLE_HANDLE,
+		)
+	);
+
+	register_block_style(
+		'core/spacer',
+		array(
+			'name'         => 'dark-dots-background',
+			'label'        => __( 'Dots (dark)', 'wporg' ),
+			'style_handle' => STYLE_HANDLE,
+		)
+	);
 }
 
 /**
