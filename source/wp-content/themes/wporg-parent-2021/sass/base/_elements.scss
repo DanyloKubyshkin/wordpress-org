@@ -99,6 +99,12 @@ figure[class*="wp-block-"],
 	}
 }
 
+// Iframes & embeds should have a default max-width.
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
 
 // Forms
 input.wp-block-search__input,
