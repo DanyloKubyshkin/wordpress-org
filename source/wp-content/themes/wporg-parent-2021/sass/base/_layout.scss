@@ -36,7 +36,7 @@
 	max-width: 100%;
 
 	&.alignleft {
-		margin-inline-end: 0;
+		margin-inline-end: 0 !important;
 	}
 
 	> * {
