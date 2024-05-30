@@ -27,7 +27,7 @@ function inject_i18n_customizations( $theme_json ) {
 		'settings' => $locale_settings,
 	);
 
-	return new \WP_Theme_JSON( $config, 'custom' );
+	return new \WP_Theme_JSON_Data( $config, 'custom' );
 }
 
 /**
