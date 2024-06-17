@@ -81,7 +81,7 @@ function get_locale_customizations( $locale ) {
 					'fontSizes' => [
 						[
 							'slug' => 'heading-cta',
-							'size' => '96px',
+							'size' => '70px',
 						],
 						[
 							'slug' => 'heading-1',
