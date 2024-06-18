@@ -21,16 +21,11 @@ blockquote {
 }
 
 // Links
-a {
+:root a {
 	cursor: pointer;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 0.15em;
 	font-weight: revert; // stylelint-disable-line font-weight-notation
-
-	&:hover,
-	&:focus {
-		text-decoration-line: none;
-	}
 }
 
 :where(.entry-content a:not(.wp-element-button)) {

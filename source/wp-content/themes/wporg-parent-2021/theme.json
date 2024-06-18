@@ -935,8 +935,16 @@
 				}
 			},
 			"link": {
+				"typography": {
+					"textDecoration": "none"
+				},
 				"color": {
 					"text": "var(--wp--custom--link--color--text)"
+				},
+				":hover": {
+					"typography": {
+						"textDecoration": "underline"
+					}
 				}
 			},
 			"caption": {
