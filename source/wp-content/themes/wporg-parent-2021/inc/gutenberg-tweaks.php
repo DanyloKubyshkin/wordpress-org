@@ -18,6 +18,7 @@ add_filter( 'get_the_archive_title_prefix', __NAMESPACE__ . '\modify_archive_tit
 add_filter( 'render_block_data', __NAMESPACE__ . '\custom_query_block_attributes' );
 add_action( 'parse_query', __NAMESPACE__ . '\compat_workaround_core_55100' );
 add_filter( 'render_block_core/pattern', __NAMESPACE__ . '\convert_inline_style_to_rtl', 20 );
+add_filter( 'render_block_data', __NAMESPACE__ . '\flip_layout_alignment_rtl' );
 add_filter( 'render_block_core/query-title', __NAMESPACE__ . '\render_index_title', 10, 2 );
 add_filter( 'render_block_core/post-author-name', __NAMESPACE__ . '\render_author_prefix', 10, 2 );
 
@@ -125,6 +126,29 @@ function convert_inline_style_to_rtl( $content ) {
 	];
 
 	return str_replace( array_keys( $replacements ), array_values( $replacements ), $content );
+}
+
+/**
+ * Flip layout alignment (right/left) when using an RTL display.
+ *
+ * @param array $parsed_block The block being rendered.
+ *
+ * @return array
+ */
+function flip_layout_alignment_rtl( $parsed_block ) {
+	if ( ! is_rtl() ) {
+		return $parsed_block;
+	}
+
+	if ( isset( $parsed_block['attrs']['layout']['justifyContent'] ) ) {
+		if ( 'left' === $parsed_block['attrs']['layout']['justifyContent'] ) {
+			$parsed_block['attrs']['layout']['justifyContent'] = 'right';
+		} else if ( 'right' === $parsed_block['attrs']['layout']['justifyContent'] ) {
+			$parsed_block['attrs']['layout']['justifyContent'] = 'left';
+		}
+	}
+
+	return $parsed_block;
 }
 
 /**
