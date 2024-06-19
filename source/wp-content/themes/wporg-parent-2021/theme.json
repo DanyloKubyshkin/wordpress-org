@@ -936,14 +936,14 @@
 			},
 			"link": {
 				"typography": {
-					"textDecoration": "none"
+					"textDecoration": "underline"
 				},
 				"color": {
 					"text": "var(--wp--custom--link--color--text)"
 				},
 				":hover": {
 					"typography": {
-						"textDecoration": "underline"
+						"textDecoration": "none"
 					}
 				}
 			},
