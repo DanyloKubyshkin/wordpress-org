@@ -140,7 +140,11 @@ function flip_layout_alignment_rtl( $parsed_block ) {
 		return $parsed_block;
 	}
 
-	if ( isset( $parsed_block['attrs']['layout']['justifyContent'] ) ) {
+	if (
+		isset( $parsed_block['attrs']['layout']['justifyContent'] ) &&
+		isset( $parsed_block['attrs']['layout']['type'] ) &&
+		'flex' !== $parsed_block['attrs']['layout']['type']
+	) {
 		if ( 'left' === $parsed_block['attrs']['layout']['justifyContent'] ) {
 			$parsed_block['attrs']['layout']['justifyContent'] = 'right';
 		} else if ( 'right' === $parsed_block['attrs']['layout']['justifyContent'] ) {
